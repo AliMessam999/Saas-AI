@@ -1,0 +1,4 @@
+npm create next-app@latest ai-saas --typescript --tailwind --eslint
+npx shadcn@latest init  
+Authenticatio with Clerk:   npm install @clerk/nextjs
+    
