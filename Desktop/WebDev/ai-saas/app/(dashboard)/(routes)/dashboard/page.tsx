@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 const DashboardPage = () => {
   return (
     <>
-    <p className="text-3xl text-green-500 ">Hello AI SAAS</p>
-    <Button variant="default" size="lg" className="w-20">Click me</Button>
+    <p className="text-3xl text-black mx-auto mt-10">Hello AI SAAS</p>
+    {/* <Button variant="default" size="lg" className="w-20">Click me</Button> */}
     </>
   );
 }

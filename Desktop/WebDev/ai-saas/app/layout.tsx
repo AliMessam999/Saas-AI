@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import "./globals.css";
+import { Button } from "@/components/ui/button";
+// import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,15 +33,20 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {/* <ClerkProvider> */}
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <Show when="signed-out">
-              <SignInButton />
-              <SignUpButton>
-                <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </Show>
+          <header className="flex justify-between items-center border p-4 gap-4 h-16">
+            <div className="logo">
+              <img src="/logo.png" alt="Logo" width={150} height={150} />
+            </div>
+            <div className="flex justify-end gap-4">
+              <Show when="signed-out">
+                <SignInButton>
+                  <Button className="bg-gray-300 hover:bg-gray-400 text-white px-4 py-2 rounded-md cursor-pointer">Sign In</Button>
+                </SignInButton>
+                <SignUpButton>
+                  <Button className="bg-gray-300 hover:bg-gray-400 text-white px-4 py-2 rounded-md cursor-pointer">Sign Up</Button>
+                </SignUpButton>
+              </Show>
+            </div>
             <Show when="signed-in">
               <UserButton />
             </Show>
@@ -52,4 +59,4 @@ export default function RootLayout({
   );
 }
 
-// 25:00
+// 34:09
